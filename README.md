@@ -1,4 +1,6 @@
 rdb-fullstack
 =============
 
-Common code for the Relational Databases and Full Stack Fundamentals courses
+This repo is for my submission to Udacity nanodegree - Fullstack Developer.
+
+Currently at Project 2
