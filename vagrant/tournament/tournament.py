@@ -97,8 +97,8 @@ def reportMatch(winner, loser):
 
     Args: winner, loser
     """
-    execute("INSERT INTO Matches (p1,p2,winner,loser) VALUES(%s,%s,%s,%s)" %
-            (winner, loser, winner, loser,))
+    execute("INSERT INTO Matches (winner,loser) VALUES(%s,%s)" %
+            (winner, loser,))
 
 
 def swissPairings():
@@ -108,7 +108,7 @@ def swissPairings():
     Returns:
       A list of tuples, each of which contains (id1, name1, id2, name2)
     """
-    
+
     players = [(row[0], row[1]) for row in playerStandings()]
 
     assert len(players) >= 2, "Need more than 2 players to make a pair"
