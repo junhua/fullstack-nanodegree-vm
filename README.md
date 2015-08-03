@@ -1,5 +1,5 @@
-rdb-fullstack
-=============
+#rdb-fullstack
+
 
 This repo is for my submission to Udacity nanodegree - Fullstack Developer.
 
@@ -17,5 +17,4 @@ Please install the python postgressql library (e.g. pip install Psycopg2)
 3. Exit Psql by \q
 4. Run tournament test by python tournament_test.py
 5. All pass!
-
 
