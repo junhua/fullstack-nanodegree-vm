@@ -6,6 +6,8 @@
 -- You can write comments in this file by starting them with two dashes, like
 -- these lines here.
 
+DROP DATABASE IF EXISTS tournament;
+
 CREATE DATABASE tournament;
 \c tournament;
 
@@ -17,8 +19,6 @@ CREATE TABLE Players (
 
 CREATE TABLE Matches (
 	id			serial primary key,
-	p1			integer REFERENCES Players (uid),
-	p2			integer REFERENCES Players (uid),
 	winner		integer REFERENCES Players (uid),
 	loser		integer REFERENCES Players (uid)
 );
@@ -36,7 +36,7 @@ GROUP BY Players.uid;
 CREATE VIEW TotalMatches AS
 SELECT Players.uid, Players.name, COUNT(Matches.id) AS total_matches 
 FROM Players LEFT JOIN Matches
-ON Players.uid = Matches.p1 OR Players.uid = Matches.p2
+ON Players.uid = Matches.winner OR Players.uid = Matches.loser
 GROUP BY Players.uid;
 
 -- satndings
