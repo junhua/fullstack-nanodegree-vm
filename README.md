@@ -22,7 +22,7 @@ Please install the python postgressql library (e.g. pip install Psycopg2)
 ##Setup
 
 ###Update settings at application.py:
-- Change the Client ID and Client Secret
+- Change the Client ID and Client Secret Key
 - Change the secret key of the app
 - Change the callback url
 
