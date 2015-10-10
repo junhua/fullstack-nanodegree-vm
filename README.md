@@ -17,7 +17,7 @@ Please install the python postgressql library (e.g. pip install Psycopg2)
 4. Run tournament test by python tournament_test.py
 5. All pass!
 
-# udacity Full Stack Web Developer Nanodegree Project 3 - Item Catalog
+# Catalog
 
 ##Setup
 
