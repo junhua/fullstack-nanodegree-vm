@@ -3,7 +3,7 @@
 ##Setup
 
 ###Update settings at application.py:
-- Change the Client ID and Client Secret in 
+- Change the Client ID and Client Secret Key
 - Change the secret key of the app
 - Change the callback url
 
