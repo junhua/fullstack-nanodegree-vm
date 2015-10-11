@@ -10,30 +10,36 @@ from sqlalchemy import create_engine
 Base = declarative_base()
 
 """User class"""
+
+
 class User(Base):
     __tablename__ = 'Users'
-   
+
     id = Column(Integer, primary_key=True)
     name = Column(String(255), nullable=False)
     github_access_token = Column(String(255))
     avatar = Column(String(255))
 
 """Category class"""
+
+
 class Category(Base):
     __tablename__ = 'Categories'
 
-    name = Column(String(255), nullable = False)
-    id = Column(Integer, primary_key = True)
+    name = Column(String(255), nullable=False, unique=True)
+    id = Column(Integer, primary_key=True)
 
 """Item class"""
+
+
 class Item(Base):
     __tablename__ = 'Items'
 
-    name = Column(String(255), nullable = False)
-    id = Column(Integer, primary_key = True)
-    category_id = Column(Integer,ForeignKey('Categories.id'))
-    category = relationship(Category) 
-    owner_id = Column(Integer,ForeignKey('Users.id'))
+    name = Column(String(255), nullable=False)
+    id = Column(Integer, primary_key=True)
+    category_id = Column(Integer, ForeignKey('Categories.id'))
+    category = relationship(Category)
+    owner_id = Column(Integer, ForeignKey('Users.id'))
     owner = relationship(User)
     description = Column(String(255))
     image = Column(String(255))
